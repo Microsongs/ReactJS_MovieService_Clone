@@ -1,7 +1,7 @@
 # ReactJS_MovieService_Clone
 This program is a clone coding of Nomadcoder's 'Creating a Movie Web Service with React'.<br>
-We'll study the ReactJS and others.
-link : https://nomadcoders.co/react-fundamentals/lobby<br><br>
+We'll study the ReactJS and others.<br>
+Video link : https://nomadcoders.co/react-fundamentals/lobby<br><br>
 
 ## NomadCoders의 ReactJS로 영화 웹 서비스 만들기 Clone
 공부목적 : ReactJS 공부<br>
