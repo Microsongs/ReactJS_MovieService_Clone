@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
+import "./App.css";
 
 // App은 React Component이다. -> React Component는 뒤에 많은 것을 가지고 있다.
 // React Component를 상속받아 사용
@@ -43,23 +44,36 @@ class App extends React.Component{
     // this.state.isLoading
     const {isLoading, movies} = this.state;
     // 랜더링 방법 1. -> renerMovies라는 함수를 생성하여 사용 2. 그냥 있는 것을 그대로 불러와서 사용
+    // HTML에서의 class는 css의 class이지만, javaScript에서는 js의 class와 혼동될 수 있으므로 className을 사용한다.
     return(
-      <div>
-        {isLoading
-         ? "Loading..."
-         : movies.map(movie => (
-           <Movie
-            key = {movie.id}
-            id = {movie.id}
-            year = {movie.year}
-            title = {movie.title}
-            summary = {movie.summary}
-            poster = {movie.medium_cover_image}
-           />
-         ))}
-     </div>
+      <section className="containter">
+        {isLoading ? 
+        // isLoading을 기준으로 로딩중일 경우 Loading...을 호출 아닐 경우 로딩화면을 송출
+        (
+          <div className="loader">
+            <span className="loader__text">Loading...</span>
+          </div>
+        ) 
+          :
+        // movies를 movie에 넣는다. 
+        (
+          <div className="movies">
+            {movies.map(movie => (
+              <Movie
+                key = {movie.id}
+                id = {movie.id}
+                year = {movie.year}
+                title = {movie.title}
+                summary = {movie.summary}
+                poster = {movie.medium_cover_image}
+                genres = {movie.genres}
+              />
+            ))}
+          </div>
+        )}
+      </section>
     )
-  };
+  }
 }
 
 
